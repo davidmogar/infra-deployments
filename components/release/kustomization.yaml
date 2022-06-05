@@ -1,25 +1,19 @@
 resources:
-- allow-argocd-to-manage.yaml
-- argocd-permissions.yaml
-- https://github.com/redhat-appstudio/release-service/config/default?ref=be28c1b371f18a2d18215df3719c997de6ab3a4f
-- .tekton/
-
-
+  - allow-argocd-to-manage.yaml
+  - argocd-permissions.yaml
+  - https://github.com/redhat-appstudio/release-service/config/default?ref=3946afe6639db9482b8c2f1d7c5167e512ef60c8
+  - .tekton/
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 images:
-- name: quay.io/redhat-appstudio/release-service
-  newName: quay.io/redhat-appstudio/release-service
-  newTag: be28c1b371f18a2d18215df3719c997de6ab3a4f
-
+  - name: quay.io/redhat-appstudio/release-service
+    newName: quay.io/redhat-appstudio/release-service
+    newTag: damoreno5
 configMapGenerator:
-- literals:
-  - DEFAULT_RELEASE_PVC="app-studio-default-workspace"
-  name: manager-properties
-  behavior: replace
-
+  - literals:
+      - DEFAULT_RELEASE_PVC="app-studio-default-workspace"
+    name: manager-properties
+    behavior: replace
 namespace: release-service
-
 patches:
   - ./manager_resources_patch.yaml
