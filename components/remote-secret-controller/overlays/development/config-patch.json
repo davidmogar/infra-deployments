@@ -2,7 +2,7 @@
   {
     "op": "replace",
     "path": "/data/VAULTHOST",
-    "value": "https://vault-spi-vault.apps.lmendes.clusters.stonesoupengineering.com"
+    "value": "https://vault-spi-vault.apps.damoreno5.clusters.stonesoupengineering.com"
   },
   {
     "op": "add",

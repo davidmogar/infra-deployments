@@ -4,4 +4,4 @@
   value: https://github.com/davidmogar/infra-deployments.git
 - op: replace
   path: /spec/template/spec/source/targetRevision
-  value: preview-main
+  value: preview-preview-main
